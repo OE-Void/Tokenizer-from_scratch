@@ -6,10 +6,8 @@ from tokenizers.normalizers import NFKC
 from tokenizers.processors import TemplateProcessing
 from transformers import PreTrainedTokenizerFast
 
-VOCAB_SIZE = 64_000   
-BATCH_SIZE = 10_000   #ideal for 24gb ram
 
-def Trainer(batch_iterator, vocab_size=VOCAB_SIZE, special_tokens=["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]"], save_to = "tokenizer"):
+def Trainer(batch_iterator, vocab_size=64_000, special_tokens=["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]"], save_to = "tokenizer"):
     # special tokens map creation
     special_tokens_map = {}
     for t in special_tokens:
