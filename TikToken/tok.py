@@ -1,4 +1,4 @@
-from tokenizers import Tokenizer, decoders, regex
+from tokenizers import Tokenizer, decoders, Regex
 from tokenizers.models import BPE
 from tokenizers.trainers import BpeTrainer
 from tokenizers.pre_tokenizers import ByteLevel, Sequence, Split
@@ -27,7 +27,7 @@ Save Path: {save_to}
     # 1. Split using GPT-4 Regex
     # 2. ByteLevel encoding (crucial for TikToken/GPT-4 style)
     tokenizer.pre_tokenizer = Sequence([
-        Split(pattern=regex.Regex(GPT4_SPLIT_PATTERN), behavior="isolated"),
+        Split(pattern=Regex(GPT4_SPLIT_PATTERN), behavior="isolated"),
         ByteLevel(add_prefix_space=False, use_regex=False) 
     ])
     
