@@ -8,6 +8,14 @@ from transformers import PreTrainedTokenizerFast
 
 
 def Trainer(batch_iterator, vocab_size=64_000, special_tokens=["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]"], save_to = "tokenizer"):
+    print(f"""
+--- Training Configuration ---
+Vocab Size: {vocab_size}
+Special Tokens: {special_tokens}
+Save Path: {save_to}
+------------------------------
+""")
+
     # special tokens map creation
     special_tokens_map = {}
     for t in special_tokens:

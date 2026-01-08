@@ -10,6 +10,13 @@ from transformers import PreTrainedTokenizerFast
 GPT4_SPLIT_PATTERN = r"(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\r\n\p{L}\p{N}]?\p{L}+|\p{N}{1,3}| ?[^\s\p{L}\p{N}]+[\r\n]*|\s*[\r\n]|\s+(?!\S)|\s+"
 
 def Trainer(batch_iterator, vocab_size=64_000, special_tokens=["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]"], save_to="tokenizer_tiktoken"):
+    print(f"""
+--- TikToken Training Configuration ---
+Vocab Size: {vocab_size}
+Special Tokens: {special_tokens}
+Save Path: {save_to}
+---------------------------------------
+""")
     # Initialize BPE (TikToken uses BPE)
     tokenizer = Tokenizer(BPE(unk_token="[UNK]"))
     
