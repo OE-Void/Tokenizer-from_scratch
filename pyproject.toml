@@ -1,0 +1,20 @@
+[project]
+name = "toeknizer-scratch"
+version = "0.1.0"
+description = "A simple BPE and TikToken tokenizer training library"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "datasets",
+    "tokenizers",
+    "transformers",
+    "tqdm",
+    "torch" 
+]
+
+[project.scripts]
+tokenizer-scratch = "main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
