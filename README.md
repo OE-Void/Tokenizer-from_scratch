@@ -1,6 +1,6 @@
 # Tokenizer From Scratch
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jNRSN_xpfx-EBCXhzZYtJfN3zSomIEJW?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/drive/1jNRSN_xpfx-EBCXhzZYtJfN3zSomIEJW?usp=sharing)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 
