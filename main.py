@@ -1,12 +1,10 @@
 from BPE.tok import Trainer
 from BPE.data import batch_iterator
 
-VOCAB_SIZE = 64_000   
-BATCH_SIZE = 10_000   # ideal for 24gb ram
-
 def main():
-    batch_iter = batch_iterator(BATCH_SIZE)
-    Trainer(batch_iter, vocab_size=VOCAB_SIZE)
+    # Uses default BATCH_SIZE=10,000 and VOCAB_SIZE=64,000
+    batch_iter = batch_iterator()
+    Trainer(batch_iter)
 
 if __name__ == "__main__":
     main()
