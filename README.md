@@ -1,6 +1,6 @@
 # Tokenizer From Scratch
 
-[![Open In Colab](https://colab.research.google.com/drive/1jNRSN_xpfx-EBCXhzZYtJfN3zSomIEJW?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OE-Void/Tokenizer-from_scratch/blob/main/assets/Tokenizer_from_scratch.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 
@@ -87,6 +87,27 @@ The main training entry point.
 *   `vocab_size`: Target vocabulary size (default `64,000`).
 *   `special_tokens`: List of special tokens. The tokenizer automatically detects mapping (e.g., `<cls>` or `[CLS]`).
 *   `save_to`: Directory/filename prefix for the saved tokenizer.
+
+## Loading and Using the Tokenizer
+
+Once trained, your tokenizer is saved as a JSON file (and a folder for Hugging Face compatibility). You can load it easily with the `transformers` library:
+
+```python
+from transformers import PreTrainedTokenizerFast
+
+# Load the tokenizer (replace 'tokenizer_tiktoken' with your save_to name)
+tokenizer = PreTrainedTokenizerFast.from_pretrained("tokenizer_tiktoken")
+
+# Encode text
+text = "Hello, world! This is a test."
+encoded = tokenizer(text)
+print(f"Tokens: {encoded.tokens()}")
+print(f"IDs: {encoded['input_ids']}")
+
+# Decode back to string
+decoded = tokenizer.decode(encoded['input_ids'])
+print(f"Decoded: {decoded}")
+```
 
 ## Project Structure
 
